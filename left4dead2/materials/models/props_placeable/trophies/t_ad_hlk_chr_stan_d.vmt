@@ -1,0 +1,55 @@
+VertexLitGeneric
+{
+$basetexture "models/props_placeable/trophies/T_AD_Hlk_CHR_Stan_D"
+$bumpmap "effects/flat_normal"
+$phong 1
+$phongboost 0.4
+$phongexponent 9
+$halflambert 0
+$phongfresnelranges "[.2 .5 5]"
+$phongtint "[.62 .72 1]"
+$ambientocclusion 1
+$diffuseexp "1.5"
+$nodecal 1
+$lightwarptexture "models/props_placeable/trophies/T_AD_Hlk_CHR_Stan_engyhnd_wrp"
+$detail "effects/burned.vtf"
+$seamless_detail 1
+$seamless_scale ".005"
+$detailscale 4
+$detailblendfactor .001
+$detailblendmode 2
+$bbqamount 1
+$BurnLevel 0.0
+$multi 4.0
+$blendMin 0.0
+$blendMax 0.5
+Proxies
+{
+BBQLevel
+{
+resultVar $bbqamount
+}
+BurnLevel
+{
+resultVar $burnlevel
+}
+Multiply
+{
+srcVar1 $BurnLevel
+srcVar2 $multi
+resultVar $BurnLevel
+}
+Clamp
+{
+min $blendMin
+max $blendMax
+srcVar1 $BurnLevel
+resultVar $BurnLevel
+}
+Equals
+{
+srcVar1 $BurnLevel
+resultVar $detailblendfactor
+}
+}
+}
