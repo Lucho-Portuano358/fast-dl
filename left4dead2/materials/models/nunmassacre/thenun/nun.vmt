@@ -1,6 +1,0 @@
-"VertexLitGeneric"
-{
-	"$basetexture" "models/nunmassacre/thenun/nun"
-                    $allowdiffusemodulation 0
-                    $nocull 1
-}
